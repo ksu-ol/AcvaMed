@@ -159,17 +159,13 @@ const successPopup = document.querySelector('.popup-success');
 const errorPopup   = document.querySelector('.popup-error');
 const allForms     = document.querySelectorAll('.form__wrap');
 
-console.log(`Найдено форм: ${allForms.length}`);
-console.log(`Success попап: ${successPopup ? 'да' : 'нет'}`);
-console.log(`Error попап: ${errorPopup ? 'да' : 'нет'}`);
-
 function lockBody() { document.body.classList.add('popup-lock'); document.documentElement.classList.add('popup-lock'); }
 function unlockBody() { document.body.classList.remove('popup-lock'); document.documentElement.classList.remove('popup-lock'); }
 
 
 popupBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        console.log('Открываем основной попап');
+        console.log('Основной попап');
         mainPopup.classList.add('popup_opened');
         lockBody();
     });
@@ -185,7 +181,7 @@ if (mainPopup ) {
 if (successPopup) {
     successPopup.querySelectorAll('.popup__close, .popup-success__button').forEach(el => {
         el.addEventListener('click', () => {
-            console.log('Закрываем success');
+            console.log('Закрытие success');
             successPopup.classList.remove('popup_opened');
             unlockBody();
         });
@@ -194,7 +190,7 @@ if (successPopup) {
 if (errorPopup) {
     errorPopup.querySelectorAll('.popup__close, .popup-error__button').forEach(el => {
         el.addEventListener('click', () => {
-            console.log('Закрываем error');
+            console.log('Закрытие error');
             errorPopup.classList.remove('popup_opened');
             unlockBody();
         });
@@ -202,8 +198,7 @@ if (errorPopup) {
 }
 
 // Обработка формы
-allForms.forEach((form, index) => {
-    console.log(`Подключаем обработчик к форме №${index+1}`);
+allForms.forEach((form) => {
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -213,7 +208,6 @@ allForms.forEach((form, index) => {
         if (submitBtn) submitBtn.disabled = true;
 
         try {
-            console.log('Отправляем fetch на:', form.action);
 
             const response = await fetch(form.action || '/assets/php/handler.php', {
                 method: 'POST',
@@ -229,32 +223,32 @@ allForms.forEach((form, index) => {
             try {
                 data = JSON.parse(text);
             } catch(err) {
-                console.error('Не удалось распарсить JSON!');
+                console.error('Не удалось распарсить JSON');
                 throw new Error('Сервер вернул не JSON');
             }
 
             console.log('Распарсенные данные:', data);
 
             if (data.success) {
-                console.log('УСПЕХ!');
+                console.log('Отправлено');
                 form.reset();
                 if (mainPopup) mainPopup.classList.remove('popup_opened');
                 unlockBody();
                 successPopup.classList.add('popup_opened');
                 lockBody();
             } else {
-                console.log('Заявка отправленно повторно', data.message);
+                console.log('Заявка отправленна повторно', data.message);
                 errorPopup.classList.add('popup_opened');
                 lockBody();
             }
 
         } catch (err) {
-            console.error('Заявка отправленно повторно:', err);
+            console.error('Заявка отправленна повторно:', err);
             if (errorPopup) {
                 errorPopup.classList.add('popup_opened');
                 lockBody();
             } else {
-                alert('Ошибка отправки!');
+                alert('Ошибка');
             }
         } finally {
             if (submitBtn) submitBtn.disabled = false;
