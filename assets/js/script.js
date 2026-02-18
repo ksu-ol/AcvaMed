@@ -165,7 +165,6 @@ function unlockBody() { document.body.classList.remove('popup-lock'); document.d
 
 popupBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        console.log('Основной попап');
         mainPopup.classList.add('popup_opened');
         lockBody();
     });
@@ -181,7 +180,7 @@ if (mainPopup ) {
 if (successPopup) {
     successPopup.querySelectorAll('.popup__close, .popup-success__button').forEach(el => {
         el.addEventListener('click', () => {
-            console.log('Закрытие success');
+            console.log('Закрываем success');
             successPopup.classList.remove('popup_opened');
             unlockBody();
         });
@@ -190,7 +189,7 @@ if (successPopup) {
 if (errorPopup) {
     errorPopup.querySelectorAll('.popup__close, .popup-error__button').forEach(el => {
         el.addEventListener('click', () => {
-            console.log('Закрытие error');
+            console.log('Закрываем error');
             errorPopup.classList.remove('popup_opened');
             unlockBody();
         });
@@ -198,7 +197,7 @@ if (errorPopup) {
 }
 
 // Обработка формы
-allForms.forEach((form) => {
+allForms.forEach((form, index) => {
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -248,7 +247,7 @@ allForms.forEach((form) => {
                 errorPopup.classList.add('popup_opened');
                 lockBody();
             } else {
-                alert('Ошибка');
+                alert('Ошибка отправки');
             }
         } finally {
             if (submitBtn) submitBtn.disabled = false;
