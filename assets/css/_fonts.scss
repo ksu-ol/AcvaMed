@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Manrope";
+	src: local("Manrope"), url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Manrope";
+	src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff"), local("Manrope");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Manrope";
+	src: url("../fonts/Manrope-Bold.woff2") format("woff2"), url("../fonts/Manrope-Bold.woff") format("woff"), local("Manrope");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Manrope";
+	src: url("../fonts/Manrope-Semibold.woff2") format("woff2"), url("../fonts/Manrope-Semibold.woff") format("woff"), local("Manrope");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+
+
+@font-face {
+  font-family: "LT Wave";
+	src: url("../fonts/LTWave.woff2") format("woff2"), url("../fonts/LTWave.woff") format("woff"), local("LTWave");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "LT Wave";
+	src: url("../fonts/LTWave-Medium.woff2") format("woff2"), url("../fonts/LTWave-Medium.woff") format("woff"), local("LTWave");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "LT Wave Bold";
+	src: url("../fonts/LTWave-Bold.woff2") format("woff2"), url("../fonts/LTWave-Bold.woff") format("woff"), local("LTWave");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+}

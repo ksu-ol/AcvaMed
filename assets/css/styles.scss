@@ -1,0 +1,23 @@
+@import
+ 'normalize',
+ 'fonts',
+ 'mixins',
+ 'media',
+ 'variables',
+ 'utils',
+ 'globals';
+
+
+@import 'blocks/logo';
+@import 'blocks/header';
+@import 'blocks/buttons';
+@import 'blocks/hero';
+@import 'blocks/drip';
+@import 'blocks/detox';
+@import 'blocks/form';
+@import 'blocks/text';
+@import 'blocks/reviews';
+@import 'blocks/doctors';
+@import 'blocks/licenses';
+@import 'blocks/faq';
+@import 'blocks/footer';

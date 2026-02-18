@@ -1,0 +1,119 @@
+
+// detox
+.detox {
+	position: relative;
+	padding-bottom: 160px;
+
+	@include tablet{
+		padding-bottom: 80px;
+	}
+    &__top {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 70px;
+			gap: 10px;
+
+			@include desktop{
+				overflow: hidden;
+			}
+
+			& button {
+				@include desktop{
+					display: none;	
+				}
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+
+				@include desktop{
+					margin-bottom: 30px;
+				}
+
+				@include mobile{
+					margin-bottom: 24px;
+				}
+    }
+
+    &__slider {
+        list-style-type: none;
+        counter-reset: item;
+
+				@include desktop{
+					overflow: visible;
+				}
+    }
+
+    &__card {
+        border-radius: 20px;
+        padding: 30px;
+        backdrop-filter: blur(10px);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+        min-height: 400px;
+
+				@include mobile{
+					border-radius: 16px;
+					padding: 20px;
+					min-height: 320px;
+				}
+
+        &-text {
+            line-height: 120%;
+            color: #004728;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+
+            &::after {
+                content: counter(item, decimal-leading-zero);
+                counter-increment: item;
+                display: block;
+                border-radius: 12px;
+                padding: 16px;
+                line-height: 1;
+                background: #78d864;
+                font-weight: 600;
+                color: #fff;
+
+								@include mobile{
+									padding: 13px 11px;
+								}
+            }
+        }
+
+        &-picture {
+            display: block;
+            & img {
+                max-height: 210px;
+                object-fit: contain;
+                margin: 0 auto;
+
+								@include mobile{
+									max-height: 200px;
+								}
+            }
+        }
+    }
+		&-line {
+			display: block;
+			position: absolute;
+			bottom: 40px;
+			width: 100%;
+
+			@include tablet{
+				bottom: 16px;
+			}
+
+			& img {
+				height: 48px;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+}

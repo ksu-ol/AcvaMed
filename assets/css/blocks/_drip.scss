@@ -1,0 +1,124 @@
+
+.drip {
+    background: url("/assets/images/drip/background.svg") no-repeat center / contain;
+
+		&__container{
+			position: relative;
+		}
+
+    &__card {
+        border: 1px solid rgba(1, 79, 45, 0.2);
+        border-radius: 20px;
+        background: var(--color-light);
+        padding: 30px;
+        min-height: 220px;
+        max-width: 354px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        position: absolute;
+
+        &:nth-child(1) {
+            top: 170px;
+            left: 40%;
+            transform: translate(-415px, 0);
+        }
+        &:nth-child(2) {
+            top: 190px;
+            right: 40%;
+            transform: translate(425px, 0);
+        }
+        &:nth-child(3) {
+            bottom: 36px;
+            left: 40%;
+            transform: translate(-480px, 0);
+        }
+        &:nth-child(4) {
+            bottom: 66px;
+            right: 40%;
+            transform: translate(500px, 0);
+        }
+    }
+
+    &__picture {
+        position: relative;
+        z-index: 2;
+        & img {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .drip {
+        &__card {
+            min-height: 180px;
+            max-width: 320px;
+
+            &:nth-child(1) {
+                top: 140px;
+                transform: translate(-400px, 0);
+            }
+            &:nth-child(2) {
+                top: 160px;
+                transform: translate(370px, 0);
+            }
+            &:nth-child(3) {
+                bottom: 16px;
+                transform: translate(-360px, 0);
+            }
+            &:nth-child(4) {
+                bottom: 40px;
+                transform: translate(400px, 0);
+            }
+        }
+
+        &__picture {
+            & img {
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .drip {
+        background: var(--color-light);
+        &__cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        &__card {
+            flex: 1 0 40%;
+            min-height: 180px;
+            max-width: none;
+            position: static;
+            &:nth-child(n) {
+                transform: none;
+            }
+        }
+
+        &__picture {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .drip {
+        &__cards {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__card {
+            flex: 1 0 40%;
+            min-height: auto;
+            padding: 20px;
+            gap: 50px;
+        }
+    }
+}

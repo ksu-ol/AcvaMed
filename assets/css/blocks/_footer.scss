@@ -1,0 +1,239 @@
+
+
+.footer {
+    &__top {
+        display: flex;
+        margin-bottom: 100px;
+        justify-content: space-between;
+        gap: 40px;
+
+				@include desktop {
+					flex-direction: column;
+          margin-bottom: 50px;
+				}
+				@include tablet {
+					margin-bottom: 40px;
+				}
+    }
+
+    &__left {
+        flex: 1 0 30%;
+        max-width: 360px;
+    }
+
+    &__right {
+        flex: 1 0 60%;
+        max-width: 1141px;
+    }
+
+    &__logo {
+        margin-bottom: 48px;
+
+				@include tablet{
+					display: flex;
+				}
+    }
+
+    &__search {
+        position: relative;
+        margin-bottom: 16px;
+				@include mobile {
+					margin-bottom: 12px;
+				}
+    }
+
+    &__button {
+        width: 100%;
+        margin-bottom: 48px;
+    }
+
+    &__networks {
+        display: flex;
+        gap: 12px;
+    }
+    
+    &__items {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    &__contacts {
+        max-width: 33%;
+    }
+
+    &__item-title {
+        font-weight: 600;
+        font-size: 20px;
+        color: #007844;
+        margin-bottom: 24px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        & a {
+            line-height: 1.5;
+            color: #004728;
+            transition: all 0.3s ease;
+            &:hover {
+                color: #007844;
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+				&-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    	}
+
+			&-icon {
+        flex-shrink: 0;
+    	}
+
+			&-text {
+        & span {
+            display: block;
+            font-weight: 400;
+            color: #3d5b4e;
+            margin-bottom: 10px;
+        }
+
+        & a, p, button {
+            font-weight: 600;
+            font-size: 20px;
+            color: #004728;
+            text-align: left;
+        }
+        & a:hover, button:hover {
+            text-decoration: underline;
+        }
+    }
+    }
+
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        & p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #3d5b4e;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__legal {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 32px;
+        & a {
+            line-height: 1;
+            color: #004728;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        &__bottom  {
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__left, &__right {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        &__items {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    
+        &__item {
+            flex: 1 0 40%;
+        }
+        &__contacts {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+    
+        &__logo {
+            margin-bottom: 40px;
+        }
+    
+        &__btn {
+            margin-bottom: 40px;
+        }
+    
+        &__networks {
+            gap: 10px;
+        }
+        
+        &__items {
+            gap: 40px;
+        }
+    
+        &__item-title {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    
+        &__info {
+            gap: 16px;
+        }
+    
+        &__info-text {
+            & span {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+            & a, p, button {
+                font-size: 18px;
+            }
+        }
+    
+        &__bottom {
+            gap: 40px;
+            & p {
+                font-size: 12px;
+                &:not(:last-child) {
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    
+        &__legal {
+            margin-bottom: 40px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .footer {
+        &__items {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+		@include desktop{
+			gap: 9px;
+		}
+    &__picture {
+        display: block;
+        & img {
+            width: 75px;
+            height: 75px;
+            min-width: 43px;
+            min-height: 43px;
+            object-fit: contain;
+						@include desktop{
+							width: 46px;
+              height: 46px;
+						}
+        }
+    }
+
+    &__text {
+
+        & p {
+            font-family: "LT Wave", sans-serif;
+            font-weight: 500;
+            font-size: 31px;
+            line-height: 1;
+            color: #007844;
+            margin-bottom: 10px;
+						@include desktop{
+						font-size: 28px;
+                margin-bottom: 2px;
+						}
+        }
+        & span {
+            display: block;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1;
+            color: #3d5b4e;
+            text-wrap: nowrap;
+						@include desktop{
+							font-size: 14px;
+						}
+        }
+    }
+}
