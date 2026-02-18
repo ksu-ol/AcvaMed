@@ -128,20 +128,6 @@
         }
     }
 
-    &__card-adventage {
-        gap: 30px;
-        font-size: 14px;
-        color: #3d5b4e;
-        min-height: 150px;
-        &::before {
-            content: '';
-            display: block;
-            width: 19px;
-            height: 24px;
-            background: url("./../img/icons/light.svg") no-repeat center / contain;
-        }
-    }
-
     &__buttons {
         display: flex;
 				flex-direction: row;

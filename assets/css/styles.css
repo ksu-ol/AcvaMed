@@ -1237,7 +1237,7 @@ p {
 }
 
 .green-block {
-  background: var(--color-main) url("./../img/green-block-bg.svg") no-repeat;
+  background: var(--color-main) url("./../images/green-block-bg.svg") no-repeat;
   background-position: right bottom;
   background-size: auto 100%;
 }
@@ -1446,19 +1446,6 @@ p {
 .hero__card-link {
   padding-top: 15px;
   font-size: 16px;
-}
-.hero__card-adventage {
-  gap: 30px;
-  font-size: 14px;
-  color: #3d5b4e;
-  min-height: 150px;
-}
-.hero__card-adventage::before {
-  content: "";
-  display: block;
-  width: 19px;
-  height: 24px;
-  background: url("./../img/icons/light.svg") no-repeat center/contain;
 }
 .hero__buttons {
   display: flex;
