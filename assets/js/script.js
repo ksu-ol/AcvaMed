@@ -152,7 +152,7 @@ navButtons.forEach(btn => {
 
 
 // form
-document.addEventListener("DOMContentLoaded", () => {
+
 const popupBtns    = document.querySelectorAll('.popup-btn');
 const mainPopup    = document.querySelector('.popup');
 const successPopup = document.querySelector('.popup-success');
@@ -260,6 +260,5 @@ allForms.forEach((form, index) => {
             if (submitBtn) submitBtn.disabled = false;
         }
     });
-});
 });
 })

@@ -1883,14 +1883,14 @@ p {
   width: 100%;
   position: relative;
 }
-a .form__content {
+.form__content {
   max-width: 1038px;
   width: 60%;
   position: relative;
   z-index: 2;
 }
 @media (max-width: 1400px) {
-  a .form__content {
+  .form__content {
     width: 62%;
   }
 }
