@@ -60,7 +60,7 @@ const reviewsSlider = document.querySelectorAll('.reviews__slider');
 const doctorsSlider = document.querySelectorAll('.doctors__slider');
 
 	if (doctorsSlider.length > 0) {
-    const reviewsSlider = new Swiper('.doctors__slider', {
+    const doctorsSlider = new Swiper('.doctors__slider', {
 			slidesPerView: 1.2,
             spaceBetween: 10,
             navigation: {
@@ -89,7 +89,7 @@ const doctorsSlider = document.querySelectorAll('.doctors__slider');
 	const licenseSlider = document.querySelectorAll('.licenses__slider');
 
 	if (licenseSlider.length > 0) {
-    const reviewsSlider = new Swiper('.licenses__slider', {
+    const licenseSlider = new Swiper('.licenses__slider', {
 			slidesPerView: 1.1,
             spaceBetween: 10,
 						navigation: {

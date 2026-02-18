@@ -20,7 +20,7 @@
     }
 }
 .light-button {
-    background: #e1f0e1;
+    background: var(--color-bg-soft);
     color: var(--color-main);
     &:active {
         background: rgba(0, 120, 68, 0.8);
@@ -60,6 +60,11 @@
     flex-shrink: 0;
     transition: all 0.3s ease;
 
+		@include desktop{
+			width: 42px;
+      height: 42px;
+		}
+
     & svg path, & svg circle {
         transition: all 0.3s ease;
     }
@@ -81,35 +86,20 @@
         opacity: 0.8;
     }
 }
-.network.green {
-    background: rgba(255, 255, 255, 0.1);
-    &:hover {
-        background: #eef8ee;
-        & svg path {
-            fill: var(--color-main);
-        }
-    }
-}
 
 .special-version {
 
 	& svg{
 		vertical-align: middle;
-	}
-    & svg path {
+		& path {
         transition: all 0.3s ease;
     }
+	}
     &:hover svg path {
         stroke: var(--color-accent);
     }
 }
 
-@media (max-width: 1400px) {
-    .network {
-        width: 42px;
-        height: 42px;
-    }
-}
 
 .tags {
     display: flex;
@@ -121,8 +111,8 @@
     border-radius: 16px;
     padding: 20px;
     line-height: 1;
-}
-.tag-circle {
+
+		&-circle {
 		display: flex;
     align-items: center;
     gap: 12px;
@@ -139,8 +129,8 @@
         background: var(--color-accent);
         flex-shrink: 0;
     }
-}
-.tag-green {
+	}
+	-green {
     border: none;
     font-weight: 600;
     color: var(--color-light);
@@ -158,28 +148,26 @@
         background: var(--color-light);
     }
 }
+}
 
 .green-block {
     background: var(--color-main) url("./../img/green-block-bg.svg") no-repeat;
     background-position: right bottom;
     background-size: auto 100%;
-}
-@media (max-width: 1400px) {
-    .green-block {
-        background-position: right -190px bottom;
-    }
-}
-@media (max-width: 1024px) {
-    .green-block {
-        background-position: right 0% bottom -1000px;
+
+		@include desktop{
+			 background-position: right -190px bottom;
+		}
+
+		@include tablet{
+			background-position: right 0% bottom -1000px;
         background-size: 70% 180%;
-    }
-}
-@media (max-width: 660px) {
-    .green-block {
-        background-position: right 0% bottom -1000px;
+		}
+
+		@include mobile{
+			background-position: right 0% bottom -1000px;
         background-size: 100% 180%;
-    }
+		}
 }
 
 .swiper-button-disabled {

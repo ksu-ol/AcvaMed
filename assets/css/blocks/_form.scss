@@ -1,5 +1,4 @@
 
-// form
 .form {
     overflow: hidden;
     &__row {
@@ -8,7 +7,7 @@
         width: 100%;
         position: relative;
     }
-
+a
     &__content {
         max-width: 1038px;
         width: 60%;
@@ -77,7 +76,6 @@
 
 @media (max-width: 1400px) {
     .form {
-    
         &__title {
             margin-bottom: 50px;
         }
@@ -229,7 +227,7 @@ input{
 				padding: 0;
         color: #000;
         outline: 1px solid #dbe1dd;
-        border: 2px solid #007844;
+        border: 2px solid var(--color-main);
         border-radius: 5px;
         appearance: none;
         cursor: pointer;
@@ -244,7 +242,7 @@ input{
             width: 5px;
             height: 9px;
             border-style: solid;
-            border-color: #007844;
+            border-color: var(--color-main);
             border-width: 0 2px 2px 0;
             transform: translate(-50%, -65%) rotate(45deg);
             opacity: 0;

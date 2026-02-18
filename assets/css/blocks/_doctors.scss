@@ -1,17 +1,26 @@
-
-// doctors
 .doctors {
-	
     &__main {
 			overflow: hidden;
 			border-radius: 30px;
 			padding: 50px;
 			margin-bottom: 70px;
 
+			@include mobile{
+				border-radius: 16px;
+        padding: 16px;
+			}
+
 			&-row {
 				display: flex;
         justify-content: space-between;
         gap: 40px;
+				@include tablet{
+					flex-direction: column;
+          gap: 40px;
+				}
+				@include mobile{
+					gap: 30px;
+				}
 			}
 
 			&-content {
@@ -19,6 +28,15 @@
         flex-direction: column;
 				width: 60%;
         max-width: 770px;
+
+				@include desktop{
+					 width: 68%;
+				}
+
+				@include tablet{
+					width: 100%;
+            max-width: 100%;
+				}
 			}
 
 			&__slider-slide{
@@ -46,6 +64,9 @@
 			&-info {
 				flex-grow: 1;
         margin-bottom: 50px;
+				@include mobile{
+					margin-bottom: 30px;
+				}
 			}
 
 			&-name {
@@ -55,6 +76,11 @@
         line-height: 1.1;
         color: var(--color-light);
         margin-bottom: 32px;
+
+				@include mobile{
+					font-size: 20px;
+            margin-bottom: 20px;
+				}
 			}
 
 			&-quote {
@@ -65,6 +91,12 @@
         display: flex;
         align-items: start;
         gap: 20px;
+
+				@include mobile{
+					font-size: 16px;
+            gap: 20px;
+            flex-direction: column;
+				}
         &::before {
             content: "";
             display: block;
@@ -72,6 +104,11 @@
             height: 19px;
             background: url("./../images/icons/quote.svg") no-repeat center / contain;
             flex-shrink: 0;
+
+						@include mobile{
+							 width: 24px;
+                height: 17px;
+						}
         }
 			}
 
@@ -80,6 +117,10 @@
         border: 1px solid var(--color-bg-soft);
 				white-space: nowrap;
 				padding: 15px;
+
+				@include mobile{
+					 width: 100%;
+				}
 			}
 
 			&-photo {
@@ -89,15 +130,36 @@
         width: 100%;
         max-width: 35%;
         position: relative;
+
+				@include desktop{
+            max-width: 30%;
+				}
+
+				@include tablet{
+					justify-content: center;
+            max-width: 100%;
+				}
         & img {
             width: 100%;
             min-width: 460px;
             max-width: 488px;
-            //height: 100%;
             object-fit: cover;
             position: absolute;
             bottom: 0;
             right: 0;
+
+						@include desktop{
+							min-width: 488px;
+              right: -60px;
+						}
+
+						@include tablet{
+							position: static;
+						}
+						@include mobile{
+					min-width: auto;
+                max-height: 450px;
+				}
         }
 			}
     }
@@ -119,8 +181,13 @@
         background: var(--color-light);
         padding: 16px;
 
-				@include mobile{
+				@include tablet{
 					height: 499px;
+				}
+
+				@include mobile{
+					border-radius: 16px;
+            padding: 10px;
 				}
 
         &-photo {
@@ -131,6 +198,11 @@
             background: var(--color-bg-soft);
             position: relative;
             height: 386px;
+
+						@include mobile{
+							border-radius: 12px;
+                height: 260px;
+						}
         }
     
         &-pic {
@@ -146,11 +218,33 @@
         }
     
         &-exp {
-            padding: 16px;
-            font-size: 16px;
-            position: absolute;
-            left: 14px;
-            bottom: 14px;
+          padding: 16px;
+					padding-left: 36px;
+					font-size: 16px;
+					position: absolute;
+					left: 14px;
+					bottom: 14px;
+					background: var(--color-accent);
+					border: none;
+					color: var(--color-light);
+					@include mobile{
+						padding: 14px;
+						padding-left: 30px;
+						font-size: 14px;
+						left: 10px;
+						bottom: 10px;
+					}
+
+					&::before{
+						content: '';
+						position: absolute;
+						left: 16px;
+						top: 42%;
+						width: 8px;
+						height: 8px;
+						background-color: var(--color-light);
+						border-radius: 50%;
+					}
         }
     
         &-content {
@@ -160,6 +254,11 @@
           padding: 30px 14px 14px;  
 					gap: 30px;
           flex-grow: 1;
+
+					@include mobile{
+						padding: 20px 6px 6px;
+            gap: 24px;
+					}
         }
     
         &-text {
@@ -171,11 +270,19 @@
           font-size: 20px;
           color: var(--color-main-dark);
           margin-bottom: 20px;
+
+					@include mobile{
+						font-size: 16px;
+            margin-bottom: 16px;
+					}
         }
     
         &-post {
             font-size: 16px;
             color: var(--color-text-dark);
+						@include mobile{
+							 font-size: 14px;
+						}
         }
     
         &-buttons {
@@ -210,113 +317,5 @@
     }
     & .doctors__card-photo {
         background: var(--color-bg-soft);
-    }
-}
-
-
-@media (max-width: 1300px) {
-    .doctors {
-        &__main-content {
-            width: 68%;
-        }
-        &__main-photo {
-            max-width: 30%;
-            & img {
-                min-width: 488px;
-                right: -60px;
-            }
-        }
-    }
-}
-@media (max-width: 1024px) {
-    .doctors {
-        &__main-row {
-            flex-direction: column;
-            gap: 40px;
-        }
-        &__main-content {
-            width: 100%;
-            max-width: 100%;
-        }
-        &__main-photo {
-            justify-content: center;
-            max-width: 100%;
-            & img {
-                position: static;
-            }
-        }
-    }
-}
-@media (max-width: 768px) {
-    .doctors {
-        &__main {
-            border-radius: 16px;
-            padding: 16px;
-        }
-    
-        &__main-row {
-            gap: 30px;
-        }
-        &__main-info {
-            margin-bottom: 30px;
-        }
-    
-        &__main-name {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-    
-        &__main-quote {
-            font-size: 16px;
-            gap: 20px;
-            flex-direction: column;
-            &::before {
-                width: 24px;
-                height: 17px;
-            }
-        }
-    
-        &__main-link {
-            width: 100%;
-        }
-    
-        &__main-photo {
-            & img {
-                min-width: auto;
-                max-height: 450px;
-            }
-        }
-
-
-        &__card {
-            border-radius: 16px;
-            padding: 10px;
-    
-            &-photo {
-                border-radius: 12px;
-                height: 260px;
-            }
-        
-            &-exp {
-                padding: 14px;
-                font-size: 14px;
-                left: 10px;
-                bottom: 10px;
-            }
-        
-            &-content {
-                padding: 20px 6px 6px;
-                gap: 24px;
-            }
-
-            &-name {
-                font-size: 16px;
-                margin-bottom: 16px;
-            }
-        
-            &-post {
-                font-size: 14px;
-            }
-        }
     }
 }

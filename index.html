@@ -2,12 +2,14 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/assets/css/styles.css">
-	<link rel="stylesheet" href="/assets/swiper/swiper-bundle.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="assets/css/fancybox.min.css" />
 	<title>Наркологическая клиника АкваМед</title>
-	<script src="/assets/js/script.js" defer></script>
-	<script src="/assets/swiper/swiper-bundle.min.js" defer></script>
-	<script src="/assets/js/swiper.js" defer></script>
+	<script src="assets/js/fancybox.min.js" defer></script>
+	<script src="assets/js/script.js" defer></script>
+	<script src="assets/swiper/swiper-bundle.min.js" defer></script>
+	<script src="assets/js/swiper.js" defer></script>
 </head>
 <body>
 	<header class="header">
@@ -644,14 +646,14 @@
 									<p class="form__subtitle">Оставьте заявку, наш специалист перезвонит вам и бесплатно проконсультирует вас</p>
 								</div>
 
-								<form class="form__wrap">
-    <input type="text" name="params[name][]" class="input form__input" placeholder="Ваше имя" required />
-    <input type="tel" name="params[phone][]" class="input form__input" placeholder="Ваш номер телефона" required />
-    <input type="email" name="params[email][]" class="input form__input" placeholder="Ваш email" required />
+								<form class="form__wrap" action="assets/php/handler.php" method="POST">
+    <input type="text" name="form[name][]" class="input form__input" placeholder="Ваше имя" required />
+    <input type="tel" name="form[phone][]" class="input form__input" placeholder="Ваш номер телефона" required minlength="11" />
+    <input type="email" name="form[email][]" class="input form__input" placeholder="Ваш email" required />
     <button type="submit" class="white-button form__button">Отправить заявку</button>
     <div class="politic form__politic">
-        <input type="checkbox" name="politic" id="politic1" />
-        <label for="politic1">Нажимая кнопку я соглашаюсь с <a href="#" rel="nofollow">политикой конфединциальности</a> и <a href="#" rel="nofollow">пользовательским соглашением</a></label>
+        <input type="checkbox" name="politic" id="politic" />
+        <label for="politic1">Нажимая кнопку я соглашаюсь с <a href="#" rel="nofollow">политикой конфидинциальности</a> и <a href="#" rel="nofollow">пользовательским соглашением</a></label>
     </div>
 </form>
 							</div>
@@ -700,7 +702,7 @@
 								<p>В целом, конечно, синтетическое тестирование предопределяет высокую востребованность экономической целесообразности принимаемых решений. Наше дело не так однозначно, как может показаться: убеждённость некоторых оппонентов говорит о возможностях модели развития. Однозначно, предприниматели в сети интернет своевременно верифицированы.</p>
 							</div>
 							<picture>
-								<source srcset="/assets/images/text/vnutrivennuu-kapel.webp" type="image/webp" />
+								<source srcset="assets/images/text/vnutrivennuu-kapel.webp" type="image/webp" />
 								<img src="assets/images/text/vnutrivennuu-kapel.jpg" loading="lazy" alt="" />
 							</picture>
 						</div>
@@ -1384,5 +1386,59 @@
 					</div>
 				</div>
 			</footer>
+
+
+	<div class="popup">
+		<div class="popup__container">
+			<span class="popup__close"></span>
+				<div class="form__content-popup">
+					<div class="form__text">
+						<h2 class="form__title">Не знаете какая капельница или процедура вам подойдет?</h2>
+						<p class="form__subtitle">Оставьте заявку, наш специалист перезвонит вам и бесплатно проконсультирует вас</p>
+					</div>
+
+					<form class="form__wrap" action="assets/php/handler.php" method="POST">
+						<input type="text" name="form[name][]" class="input form__input" placeholder="Ваше имя" required />
+						<input type="tel" name="form[phone][]" class="input form__input" id="phone" placeholder="Ваш номер телефона" required minlength="11" />
+						<input type="email" name="form[email][]" class="input form__input" placeholder="Ваш email" required />
+						<button type="submit" class="white-button form__button">Отправить заявку</button>
+						<div class="politic form__politic">
+							<input type="checkbox" name="politic" id="politic1" />
+							<label for="politic1">Нажимая кнопку я соглашаюсь с <a href="#" rel="nofollow">политикой конфидинциальности</a> и <a href="#" rel="nofollow">пользовательским соглашением</a></label>
+						</div>
+					</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-success">
+		<div class="popup__container">
+			<span class="popup__close"></span>
+			<div class="form__content-popup">
+				<div class="form__text popup__text">
+					<span class="popup-success__icon"></span>
+					<h2 class="form__title">Заявка успешно отправлена!</h2>
+				</div>
+				<button class="popup-success__button white-button" type="button">Хорошо</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="popup-error">
+		<div class="popup__container">
+			<span class="popup__close"></span>
+			<div class="form__content-popup">
+				<div class="form__text popup__text">
+					<picture class="popup-error__icon">
+						<source srcset="assets/images/icons/error.svg" type="image/svg+xml" />
+						<img src="assets/images/icons/error.png" alt="" />
+					</picture>
+					<h2 class="form__title">Произошла какая-то ошибка</h2>
+				</div>
+				<button class="popup-error__button white-button" type="button">Повторить попытку</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
