@@ -132,8 +132,8 @@ navButtons.forEach(btn => {
             } else {
                 subSublist.style.maxHeight = null;
             }
-
-            sublist.style.maxHeight = sublist.scrollHeight + "px";
+						let reflow = subSublist.offsetHeight;
+            sublist.style.maxHeight = (sublist.scrollHeight + subSublist.scrollHeight + 50) + "px"
         };
 
         subArrow.addEventListener("click", toggleSecondLevel);

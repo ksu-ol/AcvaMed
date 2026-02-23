@@ -482,6 +482,8 @@ p {
   flex-direction: column;
   gap: 32px;
   align-items: center;
+  max-width: 650px;
+  text-align: center;
 }
 .popup_opened {
   visibility: visible;
